@@ -1,0 +1,45 @@
+body{
+    background-color: #141414;
+    margin: 0;
+    padding: 0;
+}
+
+.rod{
+    position: absolute;
+    left: 20%;
+    height: 30px;
+    width: 250px;
+}
+
+.rod p{
+    text-align: center;
+    line-height: 2px;
+    color: whitesmoke;
+    font-family: Geneva, serif;
+}
+
+#rod1{
+    background-color: deeppink;
+    border-bottom: solid 2px whitesmoke;
+    border-radius: 20px 20px 0 0;
+}
+
+#rod2{
+    bottom: 0;
+    background-color: deepskyblue;
+    border-top: solid 2px whitesmoke;
+    border-radius: 0 0 20px 20px;
+
+}
+
+#ball{
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    background-color: red;
+    border-radius: 100%;
+    bottom: 33px;
+    left: calc(20% + 110px);
+}
+
+/*Author - Shubham, github-url: "github.com/shubhamistic";*/
