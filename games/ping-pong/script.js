@@ -1,12 +1,9 @@
 // IIFE
 (function() {
-    if(localStorage.length === 0) {
-        localStorage.setItem("max-score", "0");
-        localStorage.setItem("max-score-name", "");
-        alert("'This is your first Match'\n Press 'OK' to continue.");
-    }
-    localStorage.setItem("rod1", "0");
-    localStorage.setItem("rod2", "0");
+    // creating score DOM object.
+    let score = document.getElementById("score");
+    score.innerText = "0";
+    score.style.color= "whitesmoke";
 
     // getting screen width and height.
     let windowInnerWidth = window.innerWidth;
@@ -20,19 +17,40 @@
 
     // adding keypress event listener for key 'a' & 'd'.
     window.addEventListener('keypress', (event) => {
-        if(event.key === 'a'){
-            // decrementing and setting new left value of rod by '40px'.
-            if(parseInt(rod1.style.left) > 0){
-                rod1.style.left = (parseInt(rod1.style.left)-40) + "px";
-                rod2.style.left = (parseInt(rod2.style.left)-40) + "px";
-            }
+        let totalIterations = 40;
+        if((event.key === 'a') || (event.key === 'A')){
+            // decrementing and setting new left value of rod by '120px'.
+            let currentIterations = 0;
+            let rodInterval = setInterval(function (){
+                if(parseInt(rod1.style.left) > 0) {
+                    if (currentIterations === totalIterations) {
+                        clearInterval(rodInterval);
+                    }
+                    rod1.style.left = (parseInt(rod1.style.left) - 3) + "px";
+                    rod2.style.left = (parseInt(rod2.style.left) - 3) + "px";
+                    currentIterations++;
+                }
+                else{
+                    clearInterval(rodInterval);
+                }
+            });
         }
-        else if(event.key === 'd'){
-            // incrementing and setting new left value of rod by '40px'.
-            if(parseInt(rod1.style.left) < (windowInnerWidth-250)){
-                rod1.style.left = (parseInt(rod1.style.left)+40) + "px";
-                rod2.style.left = (parseInt(rod2.style.left)+40) + "px";
-            }
+        else if((event.key === 'd') || (event.key === 'D')){
+            // incrementing and setting new left value of rod by '120px'.
+            let currentIterations = 0;
+            let rodInterval = setInterval(function (){
+                if((parseInt(rod1.style.left)+200) < windowInnerWidth) {
+                    if (currentIterations === totalIterations) {
+                        clearInterval(rodInterval);
+                    }
+                    rod1.style.left = (parseInt(rod1.style.left)+3) + "px";
+                    rod2.style.left = (parseInt(rod2.style.left)+3) + "px";
+                    currentIterations++;
+                }
+                else{
+                    clearInterval(rodInterval);
+                }
+            });
         }
     });
 
@@ -45,7 +63,7 @@
     ball.style.top = getComputedStyle(ball).top;
     let initialPosition = "bottom";
     let finalPosition = "left";
-    
+
     let ballInterval = setInterval(function (){
         let currentBallPosition = ball.getBoundingClientRect();
         if((initialPosition === "bottom") && (finalPosition === "left")){
@@ -101,8 +119,8 @@
     function moveBallTo(x1, y1, x2, y2, rule, prediction){
         let moveBall = setInterval(function (){
             let initialPositionGenerated = false;
-            if( ( (parseInt(ball.style.top) === 32) && (y1 > y2) ) ||
-                ( (parseInt(ball.style.top) === windowInnerHeightForBall-32) && (y1 < y2) ) )
+            if( ((y1 > y2) && (parseInt(ball.style.top) <= 32)) ||
+                ((y1 < y2) && (parseInt(ball.style.top) >= windowInnerHeightForBall-32)) )
             {
                 if((y1 > y2) && (initialPosition !== "top")){
                     initialPosition = "top";
@@ -113,8 +131,8 @@
                     initialPositionGenerated = true;
                 }
             }
-            if( ( (parseInt(ball.style.left) === 0) && (x1 > x2) ) ||
-                ( (parseInt(ball.style.left) === windowInnerWidthForBall) && (x1 < x2) ) )
+            if( ((x1 > x2) && (parseInt(ball.style.left) <= 0)) ||
+                ((x1 < x2) && (parseInt(ball.style.left) >= windowInnerWidthForBall)) )
             {
                 if((x1 > x2) && (initialPosition !== "left")){
                     initialPosition = "left";
@@ -188,16 +206,16 @@
             }
 
             if(y1 > y2){
-                ball.style.top = (parseInt(ball.style.top)-1) + "px";
+                ball.style.top = (parseInt(ball.style.top)-2) + "px";
             }
             else{
-                ball.style.top = (parseInt(ball.style.top)+1) + "px";
+                ball.style.top = (parseInt(ball.style.top)+2) + "px";
             }
             if(x1 > x2){
-                ball.style.left = (parseInt(ball.style.left)-1) + "px";
+                ball.style.left = (parseInt(ball.style.left)-2) + "px";
             }
             else{
-                ball.style.left = (parseInt(ball.style.left)+1) + "px";
+                ball.style.left = (parseInt(ball.style.left)+2) + "px";
             }
 
             // for incrementing score and detecting ball out of bound movement.
@@ -206,49 +224,20 @@
             if( ( (parseInt(ball.style.top) <= rod1Position.top+32) ||
                     (parseInt(ball.style.top)+25 >= rod2Position.top) ) &&
                 ( (parseInt(ball.style.left)+20 < rod1Position.left) ||
-                    (parseInt(ball.style.left) > rod1Position.left+250) ) )
+                    (parseInt(ball.style.left) > rod1Position.left+200) ) )
             {
-                window.location.reload();
-                let max_score = localStorage.getItem("max-score");
-                let max_score_name = localStorage.getItem("max-score-name");
-                let alertMessage;
-
-                if(parseInt(localStorage.getItem("rod1")) === parseInt(localStorage.getItem("rod2")))
-                {
-                    alertMessage = "MATCH DRAW\n" +
-                        "SCORE : '"+localStorage.getItem("rod1") + "' EACH\n" +
-                        "MAXIMUM-SCORE: '" + max_score + "'"
-                }
-                else if(parseInt(localStorage.getItem("rod1")) > parseInt(localStorage.getItem("rod2"))){
-                    alertMessage = "ROD1 WINS\n" +
-                        "SCORE : '"+localStorage.getItem("rod1") + "'\n" +
-                        "MAXIMUM-SCORE: '" + max_score + "'"
-                }
-                else if(parseInt(localStorage.getItem("rod2")) > parseInt(localStorage.getItem("rod1"))){
-                    alertMessage = "ROD2 WINS\n" +
-                        "SCORE : '"+localStorage.getItem("rod2") + "'\n" +
-                        "MAXIMUM-SCORE: '" + max_score + "'"
-                }
-                alert(alertMessage);
+                score.style.color = "red";
+                setTimeout(function (){
+                    window.location.reload();
+                }, 150);
             }
-            else if(parseInt(ball.style.top) === rod1Position.top+32){
-                localStorage.setItem("rod1", (parseInt(localStorage.getItem("rod1"))+1).toString())
-                if(parseInt(localStorage.getItem("rod1")) > parseInt(localStorage.getItem("max-score"))){
-                    localStorage.setItem("max-score", localStorage.getItem("rod1"))
-                    localStorage.setItem("max-score-name", "ROD1")
-                }
-            }
-            else if(parseInt(ball.style.top)+25 === rod2Position.top){
-                localStorage.setItem("rod2", (parseInt(localStorage.getItem("rod2"))+1).toString())
-                if(parseInt(localStorage.getItem("rod2")) > parseInt(localStorage.getItem("max-score"))){
-                    localStorage.setItem("max-score", localStorage.getItem("rod2"))
-                    localStorage.setItem("max-score-name", "ROD2")
-                }
+            else if((parseInt(ball.style.top) <= rod1Position.top+17) ||
+                (parseInt(ball.style.top)+25 === rod2Position.top))
+            {
+                score.innerText = (parseInt(score.innerText)+1).toString();
             }
         });
     }
 })();
 
 // Author - Shubham, github-url: "github.com/shubhamistic";
-
-
