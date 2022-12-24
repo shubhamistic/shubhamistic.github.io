@@ -18,10 +18,8 @@ zero '0'.
 
 ## Key Bindings
 
-<p> press <code> <kbd>A</kbd> </code> to move the rods to the <code> 
-<b>LEFT</b> </code> direction </p>
-<p> press <code> <kbd>D</kbd> </code> to move the rods to the <code> 
-<b>RIGHT</b> </code> direction </p>
+<p> press <code> <kbd>A</kbd> </code> to move the rods to the <code> <b>LEFT</b> </code> direction </p>
+<p> press <code> <kbd>D</kbd> </code> to move the rods to the <code> <b>RIGHT</b> </code> direction </p>
 
 
 ## 🔗 Links
