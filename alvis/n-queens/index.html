@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>N-Queens</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+
+    <body>
+        <div id="input-size-div">
+            <div>
+                <form>
+                    <label for="size">Enter Board size:</label>
+                    <br>
+                    <input type="number" id="size" placeholder="00">
+                    <br>
+                    <button id="submit-button" type="submit" class="button">RUN</button>
+
+                    <button id="reset-button" class="button">RESET</button>
+
+                    <p id="error-message">*Value must be in range of (4 to 50)</p>
+                </form>
+            </div>
+
+        </div>
+
+        <div id="chess-board">
+        </div>
+
+        <div id="possible-outcomes">
+            <h2>Possible Outcomes [<span>0</span>]</h2>
+
+            <div id="possible-outcomes-container">
+            </div>
+        </div>
+    </body>
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+    <script rel="script" type="text/javascript" src="script.js"></script>
+
+    <!--    for testing purposes only-->
+    <!--    <script rel="script" type="text/javascript" src="jquery-3.6.3.js"></script>-->
+</html>

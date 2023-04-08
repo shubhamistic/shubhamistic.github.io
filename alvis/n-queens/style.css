@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Secular+One&display=swap');
+
+body{
+    margin: 0;
+    display: flex;
+    font-family: 'Secular One', sans-serif;
+    overflow-x: hidden;
+    -ms-overflow-x: hidden;
+    overscroll-behavior: none;
+}
+
+/* for left most screen*/
+#input-size-div{
+    height: 100vh;
+    width: 20vw;
+    background-color: #1c1c1c;
+}
+
+#input-size-div div form{
+    position: relative;
+    top: 20px;
+    left: 2.5vw;
+    width: 15vw;
+}
+
+#input-size-div div form label{
+    color: white;
+    font-size: 40px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+#input-size-div div form input{
+    height: 50px;
+    width: 15vw;
+    background-color: #303030;
+    border: none;
+    color: white;
+    font-size: 45px;
+    font-weight: bold;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.button{
+    height: 50px;
+    width: 15vw;
+    border: none;
+    color: #303030;
+    font-size: 30px;
+    font-weight: bold;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+#input-size-div div form #submit-button{
+    background-color: limegreen;
+}
+
+#input-size-div div form #submit-button:hover{
+    background-color: lawngreen;
+}
+
+#input-size-div div form p{
+    color: indianred;
+    visibility: hidden;
+}
+
+#reset-button{
+    background-color: goldenrod;
+}
+
+#reset-button:hover{
+    background-color: gold;
+}
+
+
+/*for center screen*/
+#chess-board{
+    display: flex;
+    flex-wrap: wrap;
+    height: 98vh;
+    width: 98vh;
+    background-color: #242424;
+    padding: 1vh;
+}
+
+.chess-block{
+    background-color: limegreen;
+    margin: 2px;
+}
+
+
+/*for right most screen*/
+
+#possible-outcomes{
+    height: 100vh;
+    width: calc(100vw - 20vw - 100vh);
+    background-color: #1c1c1c;
+    overflow-y: scroll;
+}
+
+#possible-outcomes h2{
+    text-align: center;
+    font-size: 30px;
+    margin: 5px;
+    color: gray;
+}
+
+#possible-outcomes span{
+    color: white;
+    background-color: black;
+    margin: 2px;
+    font-family: 'Poppins', sans-serif;
+}
