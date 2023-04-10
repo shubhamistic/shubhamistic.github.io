@@ -1,4 +1,8 @@
 (() => {
+    // global variable declaration
+    let sliderValue = 500;
+
+
     // prevents form to reload the page
     $("#input-size-div div form").submit(function(e) {
         e.preventDefault();
@@ -41,6 +45,21 @@
                 $(this).css({"background-color": "limegreen"});
             }
         );
+
+        // handle the slider
+        $("#speed-control-slider-div").css("visibility", "visible");
+
+        $("#speed-control-slider").slider({
+            min: 0,
+            max: 1000,
+            value: 500,
+            slide: function(event, ui) {
+                // Retrieve the current value of the slider
+                sliderValue = ui.value;
+                // Update your webpage with the slider value
+                $("#sliderValue").text((sliderValue/1000).toFixed(1));
+            }
+        });
 
         // n-queen program execution handler
         executeCode(chessBlockSize).then(()=>{
@@ -204,7 +223,7 @@
         for(let i=0 ; i<chessBlockArray.length ; i++){
             if(canBePlaced(chessBlockArray, row, i)){
                 chessBlockArray[row][i].css("background-color", 'red');
-                await sleep(500);
+                await sleep(sliderValue);
                 await solveNQueen(chessBlockArray, row+1);
                 chessBlockArray[row][i].css("background-color", 'limegreen');
             }

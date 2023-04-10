@@ -7,6 +7,7 @@ body{
     overflow-x: hidden;
     -ms-overflow-x: hidden;
     overscroll-behavior: none;
+    background-color: #1c1c1c;
 }
 
 /* for left most screen*/
@@ -89,6 +90,31 @@ textarea:focus, input:focus{
     background-color: gold;
 }
 
+#speed-control-slider-div{
+    visibility: hidden;
+}
+
+#speed-control-slider{
+    border: none;
+    background-color: whitesmoke;
+    height: 10px;
+}
+
+#speed-control-slider .ui-slider-handle:active{
+    background-color: goldenrod;
+    border-color: white;
+}
+
+#speed-control-slider-div h2{
+    font-family: 'Poppins', sans-serif;
+    color: whitesmoke;
+}
+
+#speed-control-slider-div h2 span{
+    position: absolute;
+    right: 0;
+}
+
 
 /*for center screen*/
 #chess-board{
@@ -127,4 +153,31 @@ textarea:focus, input:focus{
     background-color: black;
     margin: 2px;
     font-family: 'Poppins', sans-serif;
+}
+
+
+/*mobile devices prompt*/
+#mobile-devices-prompt{
+    display: none;
+}
+
+/*restrict mobile users*/
+@media only screen and (min-width: 320px) and (max-width: 1024px){
+    #input-size-div, #chess-board, #possible-outcomes, #speed-control-slider-div{
+        display: none;
+    }
+
+    #mobile-devices-prompt{
+        width: 90vw;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 20px;
+        display: block;
+        color: indianred;
+        background-color: #303030;
+        font-family: 'Poppins', sans-serif;
+        text-align: justify;
+    }
 }

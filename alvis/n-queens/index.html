@@ -20,9 +20,13 @@
                     <button id="reset-button" class="button">RESET</button>
 
                     <p id="error-message">*Value must be in range of (4 to 50)</p>
+
+                    <div id="speed-control-slider-div">
+                        <h2>Speed: <span id="sliderValue"> 0.5 </span> </h2>
+                        <div id="speed-control-slider"></div>
+                    </div>
                 </form>
             </div>
-
         </div>
 
         <div id="chess-board">
@@ -34,8 +38,21 @@
             <div id="possible-outcomes-container">
             </div>
         </div>
+
+
+        <div id="mobile-devices-prompt">
+            Sorry, this website is not supported for devices with screen
+            width from 320px to 1024px. Please use a device with a wider
+            screen, such as a desktop or laptop, to view this website.
+        </div>
+
     </body>
     <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+
+    <!-- Include the jQuery UI library (for speed slider)-->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
     <script rel="script" type="text/javascript" src="script.js"></script>
 
     <!--    for testing purposes only-->
