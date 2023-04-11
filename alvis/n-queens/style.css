@@ -106,6 +106,7 @@ textarea:focus, input:focus{
 }
 
 #speed-control-slider-div h2{
+    font-size: 17px;
     font-family: 'Poppins', sans-serif;
     color: whitesmoke;
 }
@@ -113,6 +114,52 @@ textarea:focus, input:focus{
 #speed-control-slider-div h2 span{
     position: absolute;
     right: 0;
+}
+
+#speed-slider-indicator{
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Poppins', sans-serif;
+}
+
+#speed-slider-indicator span{
+    margin-top: 10px;
+}
+#speed-slider-indicator #speed-slider-fast-span{
+    color: lawngreen;
+}
+#speed-slider-indicator #speed-slider-slow-span{
+    color: orangered;
+}
+
+#social-media-links{
+    position: absolute;
+    left: 3vw;
+    bottom: 20px;
+    font-size: 20px;
+}
+
+#social-media-links a{
+    text-decoration: none;
+    text-underline: none;
+}
+
+#social-media-links a i{
+    font-size: 20px;
+    margin-right: 20px;
+    color: gray;
+}
+
+#social-media-links a i:hover{
+    color: whitesmoke;
+    transition: color 0.5s;
+}
+
+#social-media-links p{
+    font-size: 12px;
+    margin: 10px 0 0 0;
+    color: gray;
+    font-family: "Lato", monospace;
 }
 
 

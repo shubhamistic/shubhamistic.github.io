@@ -55,9 +55,9 @@
             value: 500,
             slide: function(event, ui) {
                 // Retrieve the current value of the slider
-                sliderValue = ui.value;
+                sliderValue = 1000 - ui.value;
                 // Update your webpage with the slider value
-                $("#sliderValue").text((sliderValue/1000).toFixed(1));
+                $("#sliderValue").text(((1000 - sliderValue)/10).toFixed(0) + "x");
             }
         });
 
