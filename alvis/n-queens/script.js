@@ -47,8 +47,8 @@
         );
 
         // handle the slider
+        sliderValue = 500;
         $("#speed-control-slider-div").css("visibility", "visible");
-
         $("#speed-control-slider").slider({
             min: 0,
             max: 1000,
@@ -226,6 +226,7 @@
                 await sleep(sliderValue);
                 await solveNQueen(chessBlockArray, row+1);
                 chessBlockArray[row][i].css("background-color", 'limegreen');
+                await sleep(sliderValue);
             }
         }
     }
