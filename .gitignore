@@ -1,3 +1,4 @@
 .DS_Store
 .idea/
-alvis/n-queens/jquery-3.6.3.js
+ignore/jquery-3.6.3.js
+utility/
