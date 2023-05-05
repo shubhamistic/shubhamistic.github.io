@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Stop Watch</title>
+        <link rel="stylesheet" type="text/css" href="./style.css">
+    </head>
+
+    <body>
+        <!--for displaying the stop-watch on the left-side of the screen.-->
+        <div id="stop-watch-screen">
+            <div id="stop-watch-container">
+                <div id="timer-screen">
+                    <div id="hours"></div>
+                    <div class="colon">:</div>
+                    <div id="minutes"></div>
+                    <div class="colon">:</div>
+                    <div id="seconds"></div>
+                    <div class="colon">:</div>
+                    <div id="micro-seconds"></div>
+                </div>
+
+                <!--buttons for the stop-watch (start/stop/reset/lap).-->
+                <!--NOTE: using a single button for setting laps and to reset the stopwatch.-->
+                <div id="buttons">
+                    <!--lap-button/reset-button-->
+                    <div id="lap-reset-button">
+                        <div>
+                            Reset
+                        </div>
+                    </div>
+                    <!--start-button/stop-button-->
+                    <div id="start-button">
+                        <div>
+                            Start
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--for displaying the lap-screen on the right-side of the screen.-->
+        <div id="lap-screen">
+        <!--<div>-->
+        <!--    <span id="lap-text">Lap</span>-->
+        <!--    <span id="lap-time">17:07:03:03</span>-->
+        <!--</div>-->
+        </div>
+    </body>
+
+    <!-- include jQuery cdn-->
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+
+    <!-- jQuery (for testing purposes only) -->
+    <!-- <script rel="script" type="text/javascript" src="../../ignore/jquery-3.6.3.js"></script> -->
+
+    <!-- (main) javascript file for project -->
+    <script rel="script" type="text/javascript" src="script.js"></script>
+</html>
