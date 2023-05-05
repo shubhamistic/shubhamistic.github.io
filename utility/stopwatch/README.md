@@ -2,7 +2,7 @@
 
 
 <div align="center">
-  <h3 align="center">Alvis, N-Queens</h3>
+  <h3 align="center">Utility, StopWatch</h3>
 
   <p align="center">
     A StopWatch inspired by iPhone's StopWatch
@@ -42,6 +42,6 @@
 
 
 ## Feedback
-If you have any feedback, please reach out to us at [shubham2003garg@gmail.com](mailto:shubham2003garg@gmail.com)
+If you have any feedback, please reach out to me at my email address [shubham2003garg@gmail.com](mailto:shubham2003garg@gmail.com)
 
 <p align="right">(<a href="#readme-top">back to top</a>)<z/p>
