@@ -5,9 +5,7 @@
   <h3 align="center">Utility, StopWatch</h3>
 
   <p align="center">
-    A StopWatch inspired by iPhone's StopWatch
-    <br>
-    (Desktop only version) 
+    "A StopWatch inspired by iPhone's StopWatch"
     <br />
     <a href="https://github.com/shubhamistic/shubhamistic.github.io/tree/main/utility/stopwatch"><strong>Explore the docs »</strong></a>
     <br />

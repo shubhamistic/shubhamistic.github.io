@@ -227,28 +227,27 @@
     let startButton = $("#start-button");
     startButton.click(toggleStartButton);
     function toggleStartButton(){
-        let startButtonText = $("#start-button div");
-        if(startButtonText.html().trim() === 'Start'){
+        if(startButton.html().trim() === 'Start'){
             // starting up the stop-watch.
             stopWatchInterval();
             // styling the stop-button.
             startButton.css("border-color", "red");
-            startButtonText.html("Stop")
-            startButtonText.css("color", "orangered");
-            startButtonText.css("text-shadow", "0 0 50px orangered");
+            startButton.html("Stop")
+            startButton.css("color", "orangered");
+            startButton.css("text-shadow", "0 0 50px orangered");
             // on clicking the start-button the reset button will get change to lap-button.
-            $("#lap-reset-button div").html("Lap");
+            $("#lap-reset-button").html("Lap");
         }
         else{
             // stopping the stop-watch.
             clearInterval(interval);
             // styling the start-button.
             startButton.css("border-color", "darkgreen");
-            startButtonText.html("Start")
-            startButtonText.css("color", "springgreen");
-            startButtonText.css("text-shadow", "0 0 50px springgreen");
+            startButton.html("Start")
+            startButton.css("color", "springgreen");
+            startButton.css("text-shadow", "0 0 50px springgreen");
             // on clicking the stop-button the lap-button will get change to reset-button.
-            $("#lap-reset-button div").html("Reset");
+            $("#lap-reset-button").html("Reset");
         }
     }
     //6. Detecting the reset-button click.
@@ -256,7 +255,7 @@
     let resetButton = $("#lap-reset-button");
     resetButton.click(resetStopWatch);
     function resetStopWatch(){
-        let resetButtonText = $("#lap-reset-button div");
+        let resetButtonText = $("#lap-reset-button");
         if(resetButtonText.html().trim() === 'Reset'){
             clearInterval(interval);
             stopWatch.initializeTimeToZero();
