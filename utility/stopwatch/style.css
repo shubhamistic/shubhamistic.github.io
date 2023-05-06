@@ -70,6 +70,7 @@ body{
 /*right-side-lap-record-screen*/
 #lap-screen{
     width: 25vw;
+    height: 100vh;
     overflow: scroll;
     border-left: solid 1px gray;
     box-sizing: border-box;
