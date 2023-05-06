@@ -127,6 +127,7 @@ body{
     /*right-side-lap-record-screen*/
     #lap-screen{
         width: 100vw;
+        height: 50vh;
         border-left: none;
         border-top: solid 1px gray;
     }
