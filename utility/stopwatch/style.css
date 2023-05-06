@@ -115,9 +115,10 @@ body{
 
     /*left side stop-watch screen.*/
     #stop-watch-screen{
-        align-self: center;
+        width: 100vw;
         height: 50vh;
         justify-content: space-around;
+        align-self: center;
     }
     #timer-screen{
         font-size: 55px;
@@ -125,9 +126,9 @@ body{
 
     /*right-side-lap-record-screen*/
     #lap-screen{
+        width: 100vw;
         border-left: none;
         border-top: solid 1px gray;
-        width: 100vw;
     }
     #lap-screen div{
         width: 100vw;
