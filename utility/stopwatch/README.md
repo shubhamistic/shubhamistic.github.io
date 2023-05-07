@@ -42,4 +42,4 @@
 ## Feedback
 If you have any feedback, please reach out to me at my email address [shubham2003garg@gmail.com](mailto:shubham2003garg@gmail.com)
 
-<p align="right">(<a href="#readme-top">back to top</a>)<z/p>
+<p align="right">(<a href="#readme-top">back to top</a>)</p>

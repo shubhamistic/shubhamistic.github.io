@@ -44,4 +44,4 @@
 ## Feedback
 If you have any feedback, please reach out to us at [shubham2003garg@gmail.com](mailto:shubham2003garg@gmail.com)
 
-<p align="right">(<a href="#readme-top">back to top</a>)<z/p>
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
