@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Secular+One&display=swap');
+
+body{
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    font-family: 'Secular One', sans-serif;
+    overflow-x: hidden;
+    -ms-overflow-x: hidden;
+    overscroll-behavior: none;
+    background-color: #1c1c1c;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    pointer-events: none; /* temporary prompt */
+}
+
+
+/* for left input screen*/
+#input-room-div{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    width: 20vw;
+    background-color: #151515;
+    overflow: scroll;
+    border-right: solid 1px #242424;
+}
+
+#input-room-div form{
+    position: relative;
+    left: 2.5vw;
+    width: 15vw;
+}
+
+#input-room-div form label{
+    color: white;
+    font-size: 35px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+#input-room-div form input{
+    box-sizing: border-box;
+    height: 50px;
+    width: 15vw;
+    background-color: #303030;
+    border: none;
+    color: white;
+    font-size: 45px;
+    font-weight: bold;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.button{
+    height: 50px;
+    width: 15vw;
+    border: none;
+    color: #303030;
+    font-size: 30px;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+#join-button{
+    margin-top: 20px;
+    background-color: limegreen;
+}
+#join-button:hover{
+    background-color: lawngreen;
+}
+
+#exit-button{
+    margin-bottom: 20px;
+    background-color: indianred;
+}
+#exit-button:hover{
+    background-color: tomato;
+}
+
+#create-room-button{
+    margin-bottom: 20px;
+    background-color: goldenrod;
+}
+#create-room-button:hover{
+    background-color: gold;
+}
+#create-room-button p{
+    background-color: black;
+    margin: 0;
+    color: whitesmoke;
+    text-align: center
+}
+
+#input-room-div form p{
+    visibility: hidden;
+}
+#error-message{
+    color: indianred;
+}
+#marker-value{
+    font-size: 30px;
+    text-align: center;
+    background-color: #121212;
+    border-radius: 10px;
+}
+
+/*for right tic-tac-toe screen*/
+#ttt-board-div{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 100vh;
+    width: 100vh;
+    background-color: #161616;
+}
+
+#ttt-board{
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    height: calc(90vh);
+    width: calc(90vh);
+    margin: 5vh;
+}
+
+.ttt-box{
+    box-sizing: border-box;
+    display: flex;
+    height: calc((90vh - 30px)/3);
+    width: calc((90vh - 30px)/3);
+    margin: 5px;
+    background-color: #1c1c1c;
+    box-shadow: 5px 5px 5px 2px #121212;
+    border-radius: 10px;
+}
+.ttt-box:hover{
+    background-color: #171717;
+    transition: 0.3s background-color;
+}
+
+.lock-ttt-box{
+    cursor: not-allowed;
+    background-color: #141414;
+}
+.lock-ttt-box:hover{
+    background-color: #141414;
+}
+
+.lock-all-ttt-box{
+    cursor: not-allowed;
+    background-color: #1c1c1c;
+}
+.lock-all-ttt-box:hover{
+    background-color: #1c1c1c;
+}
+
+/*for cross and circle markers*/
+.marker{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    height: calc(95vh/3 - 30px);
+    width: calc(95vh/3 - 30px);
+    margin: 0;
+}
+.marker .cross-marker{
+    color: #f71638;
+    font-size: 30vh;
+}
+.marker .circle-marker{
+    height: 15vh;
+    width: 15vh;
+    border-radius: 50%;
+    border: solid 3vh dodgerblue;
+}
+
+
+/*for prompts*/
+#prompts{
+    position: absolute;
+    height: 100vh;
+    width: 100vh;
+}
+
+.prompt{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    width: 80vh;
+    text-align: center;
+}
+#prompt-1{
+    color: gray;
+    font-size: 20px;
+    word-spacing: 2px;
+}
+#prompt-2{
+    font-size: 50px;
+    color: goldenrod;
+}
+#prompt-3{
+    font-size: 50px;
+    color: #f71638;
+}
+
+
+/*mobile devices prompt*/
+#mobile-devices-prompt{
+    display: none;
+}
+
+
+/* temporary prompt */
+#temporary-prompt{
+    position: absolute;
+    background: #121212;
+    color: whitesmoke;
+    font-size: 20px;
+    width: 100vw;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+}
+
+/*restrict mobile users*/
+@media only screen and (min-width: 320px) and (max-width: 1024px){
+    #input-room-div, #ttt-board-div{
+        display: none;
+    }
+
+    #mobile-devices-prompt{
+        width: 90vw;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 20px;
+        display: block;
+        color: indianred;
+        background-color: #303030;
+        font-family: 'Poppins', sans-serif;
+        text-align: justify;
+    }
+}

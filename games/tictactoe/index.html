@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>TicTacToe Multiplayer</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+
+    <body>
+        <div id="input-room-div">
+            <form>
+                <button id="exit-button" class="button">EXIT</button>
+
+                <button id="create-room-button" class="button">CREATE</button>
+
+                <label for="size">Enter Room Code 🤭:</label>
+                <br>
+                <input type="number" id="size" placeholder="0000">
+                <br>
+                <button id="join-button" type="submit" class="button">JOIN</button>
+
+                <p id="error-message">*Invalid Room Code Entered 🙃</p>
+                <p id="marker-value">MARKER</p>
+            </form>
+        </div>
+
+        <div id="ttt-board-div">
+            <div id="ttt-board">
+                <div id="box-00" class="ttt-box"></div>
+                <div id="box-01" class="ttt-box"></div>
+                <div id="box-02" class="ttt-box"></div>
+                <div id="box-10" class="ttt-box"></div>
+                <div id="box-11" class="ttt-box"></div>
+                <div id="box-12" class="ttt-box"></div>
+                <div id="box-20" class="ttt-box"></div>
+                <div id="box-21" class="ttt-box"></div>
+                <div id="box-22" class="ttt-box"></div>
+            </div>
+
+            <div id="prompts">
+                <p id="prompt-1" class="prompt"></p>
+                <p id="prompt-2" class="prompt"></p>
+                <p id="prompt-3" class="prompt"></p>
+            </div>
+        </div>
+
+        <div id="mobile-devices-prompt">
+            Sorry, this website is not supported for devices with screen
+            width from 320px to 1024px. Please use a device with a wider
+            screen, such as a desktop or laptop, to view this website.
+        </div>
+
+        <!-- temporary prompt -->
+        <div id="temporary-prompt">
+            Sorry 🫤, this website is currently under development and the backend is not deployed yet. Please check back later to try it out.
+        </div>
+
+    </body>
+    <!-- include jQuery cdn-->
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+
+    <!-- (for testing purposes only) -->
+    <!-- <script rel="script" type="text/javascript" src="../../ignore/jquery-3.6.3.js"></script> -->
+
+    <!-- include font awesome cdn (for icons) -->
+    <script src="https://kit.fontawesome.com/bd6d10ca98.js" crossorigin="anonymous"></script>
+
+    <!-- include the socket.io cdn (for player communication) -->
+    <script src="https://cdn.socket.io/4.6.0/socket.io.min.js" integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+" crossorigin="anonymous"></script>
+
+    <!-- include main script (project algorithm) -->
+    <script rel="script" type="text/javascript" src="script.js"></script>
+</html>
