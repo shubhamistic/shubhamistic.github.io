@@ -7,7 +7,7 @@
     let validTurn = false; // Variable to track whether it is the player's turn or the opponent's turn.
 
     // define socket
-    const socket = io('http://api.shubhamistic.com', {autoConnect: false});
+    const socket = io('https://api.shubhamistic.com', {autoConnect: false});
 
     // define all the buttons
     let joinButton = $("#join-button");
@@ -120,7 +120,7 @@
 
         // ajax call to send server a "join room" request
         $.ajax({
-            url: "http://api.shubhamistic.com/tictactoe/join-room",
+            url: "https://api.shubhamistic.com/tictactoe/join-room",
             type: "POST",
             data: JSON.stringify({"room_code": roomCodeInputVal}),
             success: function(response){
@@ -181,7 +181,7 @@
     createRoomButton.click(function(){
         // ajax call to request server to generate a room code
         $.ajax({
-            url: "http://api.shubhamistic.com/tictactoe/generate-room-code",
+            url: "https://api.shubhamistic.com/tictactoe/generate-room-code",
             type: "GET",
             success: function (response) {
                 // set (global) room_code & token variable
@@ -241,7 +241,7 @@
     exitButton.click(function(){
         // ajax call to send server a "exit room" request
         $.ajax({
-            url: "http://api.shubhamistic.com/tictactoe/exit-room",
+            url: "https://api.shubhamistic.com/tictactoe/exit-room",
             type: "POST",
             data: JSON.stringify({
                 "room_code": room_code,
