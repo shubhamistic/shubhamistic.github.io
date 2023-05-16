@@ -13,7 +13,6 @@ body{
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
-    pointer-events: none; /* temporary prompt */
 }
 
 
@@ -232,18 +231,6 @@ textarea:focus, input:focus{
     display: none;
 }
 
-
-/* temporary prompt */
-#temporary-prompt{
-    position: absolute;
-    background: #121212;
-    color: whitesmoke;
-    font-size: 20px;
-    width: 100vw;
-    top: 50%;
-    transform: translateY(-50%);
-    text-align: center;
-}
 
 /*restrict mobile users*/
 @media only screen and (min-width: 320px) and (max-width: 1024px){
