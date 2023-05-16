@@ -56,7 +56,7 @@
     // if "open anyway" button is clicked
     let openAnywayButton = $('#mobile-devices-prompt button');
     openAnywayButton.click(function (){
-        $('#input-room-div, #ttt-board-div').css("display", "block");
+        $('#input-room-div, #ttt-board-div').css("display", "flex");
         $('#mobile-devices-prompt').css("display", "none");
     });
 
