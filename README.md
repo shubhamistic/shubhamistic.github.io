@@ -14,14 +14,19 @@
 
 ## Projects
 
+### Alvis
+- **N-Queens [[Website]](https://shubhamistic.com/alvis/n-queens) [[Repository]](/alvis/n-queens):**
+  Visualize popular N-Queens DSA problem.
+
 ### Games
-- **Ping-Pong:** A classic game of table tennis brought to your browser.
+- **Ping-Pong [[Website]](https://shubhamistic.com/games/ping-pong) [[Repository]](/games/ping-pong):**
+    A classic game of table tennis brought to your browser.
+- **Tic-Tac-Toe [[Website]](https://shubhamistic.com/games/tictactoe) [[Repository]](/games/tictactoe):**
+    Play TicTacToe with your friends online.
 
 ### Utility
-- **Stopwatch:** A stopwatch inspired by iPhone's stopwatch app.
-
-### Alvis
-- **N-Queens:** Visualize popular N-Queens DSA problem.
+- **Stopwatch [[Website]](https://shubhamistic.com/utility/stopwatch) [[Repository]](/utility/stopwatch):**
+    A stopwatch inspired by iPhone's stopwatch app.
 
 
 ## License
