@@ -52,6 +52,14 @@
         e.preventDefault();
     });
 
+    // enable game for small screen device except mobiles
+    // if "open anyway" button is clicked
+    let openAnywayButton = $('#mobile-devices-prompt button');
+    openAnywayButton.click(function (){
+        $('#input-room-div, #ttt-board-div').css("display", "block");
+        $('#mobile-devices-prompt').css("display", "none");
+    });
+
     // function to bring the webpage to its default state
     function defaults() {
         // set all (global) variable to their default values

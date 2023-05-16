@@ -229,26 +229,43 @@ textarea:focus, input:focus{
 /*mobile devices prompt*/
 #mobile-devices-prompt{
     display: none;
+    width: 90vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #303030;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 5px;
 }
 
+#mobile-devices-prompt p{
+    font-size: 20px;
+    color: indianred;
+    text-align: justify;
+    margin: 10px;
+}
+
+#mobile-devices-prompt button{
+    height: 40px;
+    border: solid 1px darkgoldenrod;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    color: darkgoldenrod;
+    background-color: unset;
+    margin: 10px;
+}
 
 /*restrict mobile users*/
-@media only screen and (min-width: 320px) and (max-width: 1024px){
-    #input-room-div, #ttt-board-div{
-        display: none;
-    }
-
-    #mobile-devices-prompt{
-        width: 90vw;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 20px;
-        display: block;
-        color: indianred;
-        background-color: #303030;
-        font-family: 'Poppins', sans-serif;
-        text-align: justify;
-    }
+/*for mobile*/
+@media only screen and (max-width: 480px){
+    #input-room-div, #ttt-board-div{display: none; !important;}
+    #mobile-devices-prompt{display: block; !important;}
+    #mobile-devices-prompt button{display: none; !important;}
+}
+/*for small-screens, laptops*/
+@media only screen and (max-width: 1024px){
+    #input-room-div, #ttt-board-div{display: none;}
+    #mobile-devices-prompt{display: block;}
 }
