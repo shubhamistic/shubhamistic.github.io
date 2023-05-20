@@ -1,13 +1,15 @@
 (() => {
+    // define HTTPS to connect to server
+    const HTTPS = 'https://api.shubhamistic.com/tictactoe';
+    // define socket
+    const socket = io(HTTPS, {autoConnect: false});
+
     // (global) variables
     let marker = null; // Variable to store either 'X' or 'O'
     let room_code = null;
     let token = null;
     let participant_type = null;
     let validTurn = false; // Variable to track whether it is the player's turn or the opponent's turn.
-
-    // define socket
-    const socket = io('https://api.shubhamistic.com', {autoConnect: false});
 
     // define all the buttons
     let joinButton = $("#join-button");
@@ -115,7 +117,6 @@
 
         // clear all socket events and disconnect the socket
         socket.off();
-        socket.disconnect();
     }
     // initially set all things to default
     defaults();
@@ -128,7 +129,7 @@
 
         // ajax call to send server a "join room" request
         $.ajax({
-            url: "https://api.shubhamistic.com/tictactoe/join-room",
+            url: `${HTTPS}/join-room`,
             type: "POST",
             data: JSON.stringify({"room_code": roomCodeInputVal}),
             success: function(response){
@@ -164,10 +165,7 @@
                     });
 
                     // program execution handler
-                    startGame(room_code, token, participant_type).then(() => {
-                        // revert to default settings after the game is finished
-                        // defaults();
-                    });
+                    startGame(room_code, token, participant_type);
                 }
                 else{
                     // display error message if entered room code is unavailable
@@ -189,7 +187,7 @@
     createRoomButton.click(function(){
         // ajax call to request server to generate a room code
         $.ajax({
-            url: "https://api.shubhamistic.com/tictactoe/generate-room-code",
+            url: `${HTTPS}/generate-room-code`,
             type: "GET",
             success: function (response) {
                 // set (global) room_code & token variable
@@ -231,10 +229,7 @@
                 });
 
                 // program execution handler
-                startGame(room_code, token, participant_type).then(() => {
-                    // revert to default settings after the game is finished
-                    // defaults();
-                });
+                startGame(room_code, token, participant_type);
             },
             error: function () {/* exception (not necessary to handle) */}
         });
@@ -249,7 +244,7 @@
     exitButton.click(function(){
         // ajax call to send server a "exit room" request
         $.ajax({
-            url: "https://api.shubhamistic.com/tictactoe/exit-room",
+            url: `${HTTPS}/exit-room`,
             type: "POST",
             data: JSON.stringify({
                 "room_code": room_code,
@@ -291,7 +286,7 @@
     });
 
 
-    async function startGame(room_code, token, participant_type){
+    function startGame(room_code, token, participant_type){
         // connect to the socket
         socket.connect();
 
@@ -300,76 +295,89 @@
             // connected to the socket
         });
 
+        // function to initialize the player and set properties
+        // such as marker, marker color, lock all boxes.
+        function initializePlayer(data){
+            // host joined, set marker for the host
+            marker = data["marker"];
+
+            // player with marker 'X' will always have first mover advantage
+            if(marker === 'X'){
+                validTurn = true;
+                // display marker value
+                markerValue.html("MARKER: <b>X</b>");
+                markerValue.css({
+                    "visibility": "visible",
+                    "color": "#f71638"
+                });
+            }
+            if(marker === 'O'){
+                // display marker value
+                markerValue.html("MARKER: <b>O</b>");
+                markerValue.css({
+                    "visibility": "visible",
+                    "color": "dodgerblue"
+                });
+
+                // lock all boxes
+                tttBox.addClass("lock-all-ttt-box");
+            }
+        }
+
+        // function to initialize the player's turn
+        function initializePlayerTurn(data){
+            prompt1.fadeIn(function() {
+                $(this).delay(1000).fadeOut(function() {
+                    if(marker === 'X'){
+                        // prompt host about his/her turn
+                        prompt1.html("It's your turn now 😉!");
+                        prompt1.fadeIn(function() {
+                            $(this).delay(500).fadeOut(function() {
+                                // Enable the tic-tac-toe board and disable prompts
+                                prompts.css("display", "none");
+                                tttBoardDiv.attr('disabled', false);
+                                tttBoardDiv.css({
+                                    'pointer-events': 'auto',
+                                    'opacity': '100%'
+                                });
+                            });
+                        });
+                    }
+                    if(marker === 'O'){
+                        // prompt host about guest's turn
+                        prompt1.html("It's now your opponent's turn 🥸!");
+                        prompt1.fadeIn(function() {
+                            $(this).delay(500).fadeOut(function() {
+                                // Enable the tic-tac-toe board and disable prompts
+                                prompts.css("display", "none");
+                                tttBoardDiv.attr('disabled', false);
+                                tttBoardDiv.css({
+                                    'pointer-events': 'auto',
+                                    'opacity': '100%'
+                                });
+                            });
+                        });
+                    }
+                });
+            });
+        }
+
+
         // host socket events
         if(participant_type === "host") {
             // host join handler
             socket.on('host-joined', function (data) {
-                // host joined, set marker for the host
-                marker = data["marker"];
-
-                // player with marker 'X' will always have first mover advantage
-                if(marker === 'X'){
-                    validTurn = true;
-                    // display marker value
-                    markerValue.html("MARKER: <b>X</b>");
-                    markerValue.css({
-                        "visibility": "visible",
-                        "color": "#f71638"
-                    });
-                }
-                if(marker === 'O'){
-                    // display marker value
-                    markerValue.html("MARKER: <b>O</b>");
-                    markerValue.css({
-                        "visibility": "visible",
-                        "color": "dodgerblue"
-                    });
-
-                    // lock all boxes
-                    tttBox.addClass("lock-all-ttt-box");
-                }
+                // initialize the host
+                initializePlayer(data);
             });
 
             // guest join from host point of view handler
             socket.on('guest-joined', function (data) {
                 // guest joined
 
-                // prompt opponent join successful message
+                // prompt opponent join successful message and initialize the turn
                 prompt1.html("Your opponent 😈 has joined the game!");
-                prompt1.fadeIn(function() {
-                    $(this).delay(1000).fadeOut(function() {
-                        if(marker === 'X'){
-                            // prompt host about his/her turn
-                            prompt1.html("It's your turn now 😉!");
-                            prompt1.fadeIn(function() {
-                                $(this).delay(500).fadeOut(function() {
-                                    // Enable the tic-tac-toe board and disable prompts
-                                    prompts.css("display", "none");
-                                    tttBoardDiv.attr('disabled', false);
-                                    tttBoardDiv.css({
-                                        'pointer-events': 'auto',
-                                        'opacity': '100%'
-                                    });
-                                });
-                            });
-                        }
-                        if(marker === 'O'){
-                            // prompt host about guest's turn
-                            prompt1.html("It's now your opponent's turn 🥸!");
-                            prompt1.fadeIn(function() {
-                                $(this).delay(500).fadeOut(function() {
-                                    // Enable the tic-tac-toe board and disable prompts
-                                    prompts.css("display", "none");
-                                    tttBoardDiv.attr('disabled', false);
-                                    tttBoardDiv.css({
-                                        'pointer-events': 'auto',
-                                        'opacity': '100%'
-                                    });
-                                });
-                            });
-                        }
-                    });
-                });
+                initializePlayerTurn(data);
             });
 
             // host won on host side
@@ -416,67 +424,12 @@
         if(participant_type === "guest") {
             // guest join handler
             socket.on('guest-joined', function (data) {
-                // guest joined, set marker for the guest
-                marker = data["marker"];
+                // initialize the guest
+                initializePlayer(data);
 
-                // player with marker 'X' will always have first mover advantage
-                if(marker === 'X'){
-                    validTurn = true;
-                    // display marker value
-                    markerValue.html("MARKER: <b>X</b>");
-                    markerValue.css({
-                        "visibility": "visible",
-                        "color": "#f71638"
-                    });
-                }
-                if(marker === 'O'){
-                    // display marker value
-                    markerValue.html("MARKER: <b>O</b>");
-                    markerValue.css({
-                        "visibility": "visible",
-                        "color": "dodgerblue"
-                    });
-
-                    // lock all boxes
-                    tttBox.addClass("lock-all-ttt-box");
-                }
-
-                // prompt join successful message
+                // prompt join successful message and initialize the turn
                 prompt1.html("You have successfully joined the game! 😉️");
-                prompt1.fadeIn(function() {
-                    $(this).delay(1000).fadeOut(function() {
-                        if(marker === 'X'){
-                            // prompt guest about his/her turn
-                            prompt1.html("It's your turn now 😉!");
-                            prompt1.fadeIn(function() {
-                                $(this).delay(500).fadeOut(function() {
-                                    // Enable the tic-tac-toe board and disable prompts
-                                    prompts.css("display", "none");
-                                    tttBoardDiv.attr('disabled', false);
-                                    tttBoardDiv.css({
-                                        'pointer-events': 'auto',
-                                        'opacity': '100%'
-                                    });
-                                });
-                            });
-                        }
-                        if(marker === 'O'){
-                            // prompt guest about host's turn
-                            prompt1.html("It's now your opponent's turn 🥸!");
-                            prompt1.fadeIn(function() {
-                                $(this).delay(500).fadeOut(function() {
-                                    // Enable the tic-tac-toe board and disable prompts
-                                    prompts.css("display", "none");
-                                    tttBoardDiv.attr('disabled', false);
-                                    tttBoardDiv.css({
-                                        'pointer-events': 'auto',
-                                        'opacity': '100%'
-                                    });
-                                });
-                            });
-                        }
-                    });
-                });
+                initializePlayerTurn(data);
             });
 
             // guest won on guest side
