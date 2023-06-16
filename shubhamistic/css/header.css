@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Changa&display=swap');
+
+#header{
+    height: 60px;
+    width: 100vw;
+}
+
+nav {
+    position: fixed;
+    height: 60px;
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+    z-index: 999;
+}
+
+.nav-links{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-links .icon{
+    height: 30px;
+    width: 30px;
+}
+
+.nav-links .icon i{
+    color: whitesmoke;
+}
+
+nav a{
+    text-decoration: none;
+}
+
+.nav-link {
+    height: 30px;
+    margin: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-60px);
+    animation: slide-in 0.3s ease-in forwards;
+}
+
+.nav-link p {
+    font-size: 15px;
+    padding: 10px;
+    color: whitesmoke;
+}
+
+#nav-ss-section-div, #nav-ss-social-div{
+    display: none;
+}
+#nav-ss-section-div:hover, #nav-ss-social-div:hover{
+    cursor: pointer;
+}
+
+
+#nav-projects {animation-delay: 0.05s;}
+#nav-experience {animation-delay: 0.1s;}
+#nav-skills {animation-delay: 0.15s;}
+#nav-achievements {animation-delay: 0.2s;}
+#nav-contact {animation-delay: 0.25s;}
+#nav-email{animation-delay: 0.6s;}
+#nav-linkedin{animation-delay: 0.65s;}
+#nav-github{animation-delay: 0.7s;}
+#nav-home{animation-delay: 1s;}
+
+
+@keyframes slide-in {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+/*for iPads, Tablets*/
+@media only screen and (max-width: 768px){
+    nav{justify-content: space-between;}
+    #nav-home-div, #nav-section-div{display: none;}
+    #nav-ss-section-div{
+        display: block;
+        justify-content: flex-end;
+    }
+}
+
+/*for small-screens, laptops*/
+@media only screen and (max-width: 1024px){
+    #nav-social-div{display: none;}
+    #nav-ss-social-div{display: block;}
+    .nav-link{
+        transform: translateY(0);
+        animation: none;
+    }
+}

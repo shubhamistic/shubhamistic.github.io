@@ -1,0 +1,7 @@
+#footer-container{
+    height: 250px;
+    width: 100vw;
+    background-color: #363636;
+    opacity: 0.5;
+    border-top: solid 2px gray;
+}
