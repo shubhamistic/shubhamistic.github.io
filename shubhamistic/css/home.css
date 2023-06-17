@@ -102,3 +102,12 @@
     #home-heading-main h2 {font-size: 5em;}
     #home-heading p{font-size: 20px;}
 }
+
+/* All small screens (320px - 1024px) */
+@media screen and (min-width: 320px) and (max-width: 1024px) {
+    .visible-anim{
+        animation: none;
+        opacity: 0.75;
+        visibility: visible;
+    }
+}
