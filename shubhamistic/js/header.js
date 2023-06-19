@@ -1,34 +1,74 @@
-(()=> {
+$(document).ready(()=> {
     let socialButton = $('#nav-ss-social-div');
-
-
-    socialButton.click(function () {
-
-    });
+    let sectionButton = $('#nav-ss-section-div');
 
     socialButton.click(function (){
-        socialButton.css("background-color", "green");
-
         socialButton.html(`
-            <a href="https://github.com/shubhamistic/" target="_blank">
-                <div id="nav-ss-github" class="nav-link button icon"> <i class="fa-brands fa-github"></i> </div>
-            </a>
-            <a href="https://www.linkedin.com/in/shubhamistic/" target="_blank">
-                <div id="nav-ss-linkedin" class="nav-link button icon"> <i class="fa-brands fa-linkedin-in"></i> </div>
-            </a>
-            <a href="mailto:shubham2003garg@gmail.com">
-                <div id="nav-ss-email" class="nav-link button icon"> <i class="fa-regular fa-envelope"></i> </div>
-            </a>
-        `)
+            <div id="nav-ss-social-links">
+                <div class="nav-ss-cross-button nav-link"> <i class="fa-solid fa-xmark"></i> </div>
+                <a href="https://github.com/shubhamistic/" target="_blank">
+                    <div id="nav-ss-github" class="nav-link button icon"> <i class="fa-brands fa-github"></i> </div>
+                </a>
+                <a href="https://www.linkedin.com/in/shubhamistic/" target="_blank">
+                    <div id="nav-ss-linkedin" class="nav-link button icon"> <i class="fa-brands fa-linkedin-in"></i> </div>
+                </a>
+                <a href="mailto:shubham2003garg@gmail.com">
+                    <div id="nav-ss-email" class="nav-link button icon"> <i class="fa-regular fa-envelope"></i> </div>
+                </a>
+            </div>
+        `);
+
+        let crossButton = $('.nav-ss-cross-button');
+        crossButton.click(function (event){
+            event.stopPropagation();
+            socialButton.html(`
+                <div id="nav-ss-social-button" class="nav-link button icon"> <i class="fa-solid fa-globe"></i> </div>
+            `);
+            sectionButton.html(`
+                <div id="nav-ss-section-button" class="nav-link button icon"> <i class="fa-solid fa-bars"></i> </div>
+            `);
+        });
     });
 
-    $(document).on('click', function(e) {
-        // If the user clicks anywhere other than the button or the div,
-        // reappear the button and hide the div.
-        if (!$(e.target).closest(socialButton).length && !$(e.target).closest('#div').length) {
-            // $div.hide();
-            socialButton.css("background-color", "unset");
-            // socialButton.empty();
-        }
+    sectionButton.click(function (){
+        sectionButton.html(`
+            <div id="nav-ss-section-links">
+                <div>
+                    <div class="nav-ss-cross-button nav-link"> <i class="fa-solid fa-xmark"></i> </div>
+                </div>
+               
+                <div>
+                    <a href="#header"><div id="nav-home" class="nav-link button">  <p>HOME</p> </div></a>
+                    <a href="#projects"><div id="nav-projects" class="nav-link button"> <p>PROJECTS</p> </div></a>
+                    <a href="#experience"><div id="nav-experience" class="nav-link button"> <p>EXPERIENCE</p> </div></a>
+                    <a href="#skills"><div id="nav-skills" class="nav-link button"> <p>SKILLS</p> </div></a>
+                    <a href="#achievements"><div id="nav-achievements" class="nav-link button"> <p>ACHIEVEMENTS</p> </div></a>
+                    <a href="#contact"><div id="nav-contact" class="nav-link button"> <p>CONTACT</p> </div></a>
+                </div>
+                
+                <div>
+                    <a href="https://github.com/shubhamistic/" target="_blank">
+                        <div id="nav-ss-github" class="nav-link button icon"> <i class="fa-brands fa-github"></i> </div>
+                    </a>
+                    <a href="https://www.linkedin.com/in/shubhamistic/" target="_blank">
+                        <div id="nav-ss-linkedin" class="nav-link button icon"> <i class="fa-brands fa-linkedin-in"></i> </div>
+                    </a>
+                    <a href="mailto:shubham2003garg@gmail.com">
+                        <div id="nav-ss-email" class="nav-link button icon"> <i class="fa-regular fa-envelope"></i> </div>
+                    </a>
+                </div>
+            </div>
+        `);
+
+        let crossButton = $('.nav-ss-cross-button');
+        crossButton.click(function (event){
+            event.stopPropagation();
+            socialButton.html(`
+                <div id="nav-ss-social-button" class="nav-link button icon"> <i class="fa-solid fa-globe"></i> </div>
+            `);
+            sectionButton.html(`
+                <div id="nav-ss-section-button" class="nav-link button icon"> <i class="fa-solid fa-bars"></i> </div>
+            `);
+        });
     });
-})();
+});
