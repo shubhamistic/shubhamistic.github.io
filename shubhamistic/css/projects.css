@@ -5,13 +5,13 @@
 
 
 #projects-hexagonal-rectangle {
-    width: 140px;
+    width: 130px;
 }
 #projects-hr-left-line{
     width: calc(90vw - 80vw);
 }
 #projects-hr-right-line{
-    width: calc(90vw - 10vw - 140px);
+    width: calc(90vw - 10vw - 130px);
 }
 
 

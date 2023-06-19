@@ -5,13 +5,13 @@
 
 
 #achievements-hexagonal-rectangle {
-    width: 200px;
+    width: 190px;
 }
 #achievements-hr-left-line{
     width: calc(90vw - 80vw);
 }
 #achievements-hr-right-line{
-    width: calc(90vw - 10vw - 200px);
+    width: calc(90vw - 10vw - 190px);
 }
 
 
@@ -31,9 +31,9 @@
 
 /* Small screens, laptops (769px - 1024px) */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-    #achievements-hexagonal-rectangle {width: 180px;}
+    #achievements-hexagonal-rectangle {width: 170px;}
     #achievements-hr-left-line{width: calc(90vw - 80vw);}
-    #achievements-hr-right-line{width: calc(90vw - 10vw - 180px);}
+    #achievements-hr-right-line{width: calc(90vw - 10vw - 170px);}
 }
 
 /* All small screens (320px - 1024px) */

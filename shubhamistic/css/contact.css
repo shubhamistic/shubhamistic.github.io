@@ -5,13 +5,13 @@
 
 
 #contact-hexagonal-rectangle {
-    width: 130px;
+    width: 120px;
 }
 #contact-hr-left-line{
     width: calc(90vw - 80vw);
 }
 #contact-hr-right-line{
-    width: calc(90vw - 10vw - 130px);
+    width: calc(90vw - 10vw - 120px);
 }
 
 

@@ -4,13 +4,13 @@
 }
 
 #experience-hexagonal-rectangle {
-    width: 164px;
+    width: 154px;
 }
 #experience-hr-left-line{
     width: calc(90vw - 80vw);
 }
 #experience-hr-right-line{
-    width: calc(90vw - 10vw - 164px);
+    width: calc(90vw - 10vw - 154px);
 }
 
 

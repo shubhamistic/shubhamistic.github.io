@@ -44,6 +44,7 @@ p{
     align-items: center;
 }
 .hexagonal-rectangle {
+    height: 32px;
     background-color: rgba(54, 54, 54, 0.5);
     position: relative;
     clip-path: polygon(10% 0, 90% 0, 100% 50%, 90% 100%, 10% 100%, 0 50%);
@@ -52,7 +53,7 @@ p{
     align-items: center;
 }
 .hexagonal-rectangle p{
-    font-size: 25px;
+    font-size: 22px;
     color: whitesmoke;
     opacity: 0.5;
 }
