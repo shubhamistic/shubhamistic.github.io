@@ -2,3 +2,39 @@
     height: 100vh;
     width: 100vw;
 }
+
+#experience-hexagonal-rectangle {
+    width: 164px;
+}
+#experience-hr-left-line{
+    width: calc(90vw - 80vw);
+}
+#experience-hr-right-line{
+    width: calc(90vw - 10vw - 164px);
+}
+
+
+/* Mobile devices (320px - 480px) */
+@media screen and (min-width: 320px) and (max-width: 480px) {
+    #experience-hexagonal-rectangle {width: 124px;}
+    #experience-hr-left-line{width: calc(45vw - 62px);}
+    #experience-hr-right-line{width: calc(45vw - 62px);}
+}
+
+/* iPads, Tablets (481px - 768px) */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    #experience-hexagonal-rectangle {width: 134px;}
+    #experience-hr-left-line{width: calc(90vw - 80vw);}
+    #experience-hr-right-line{width: calc(90vw - 10vw - 134px);}
+}
+
+/* Small screens, laptops (769px - 1024px) */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    #experience-hexagonal-rectangle {width: 144px;}
+    #experience-hr-left-line{width: calc(90vw - 80vw);}
+    #experience-hr-right-line{width: calc(90vw - 10vw - 144px);}
+}
+
+/* All small screens (320px - 1024px) */
+@media screen and (min-width: 320px) and (max-width: 1024px) {
+}

@@ -24,9 +24,6 @@ $(document).ready(()=> {
             socialButton.html(`
                 <div id="nav-ss-social-button" class="nav-link button icon"> <i class="fa-solid fa-globe"></i> </div>
             `);
-            sectionButton.html(`
-                <div id="nav-ss-section-button" class="nav-link button icon"> <i class="fa-solid fa-bars"></i> </div>
-            `);
         });
     });
 
@@ -63,9 +60,6 @@ $(document).ready(()=> {
         let crossButton = $('.nav-ss-cross-button');
         crossButton.click(function (event){
             event.stopPropagation();
-            socialButton.html(`
-                <div id="nav-ss-social-button" class="nav-link button icon"> <i class="fa-solid fa-globe"></i> </div>
-            `);
             sectionButton.html(`
                 <div id="nav-ss-section-button" class="nav-link button icon"> <i class="fa-solid fa-bars"></i> </div>
             `);

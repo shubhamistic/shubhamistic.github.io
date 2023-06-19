@@ -18,6 +18,12 @@ html, body{
     scroll-behavior: smooth;
 }
 
+p{
+    font-family: 'Changa', sans-serif;
+}
+
+
+/*buttons*/
 .button{
     background-color: #363636;
     opacity: 0.5;
@@ -30,6 +36,45 @@ html, body{
     transition: 0.3s opacity;
 }
 
-p{
-    font-family: 'Changa', sans-serif;
+
+/*project-heading*/
+.section-heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hexagonal-rectangle {
+    background-color: rgba(54, 54, 54, 0.5);
+    position: relative;
+    clip-path: polygon(10% 0, 90% 0, 100% 50%, 90% 100%, 10% 100%, 0 50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hexagonal-rectangle p{
+    font-size: 25px;
+    color: whitesmoke;
+    opacity: 0.5;
+}
+.hr-line{
+    height: 1px;
+    border: solid 1px rgba(54, 54, 54, 0.5);
+}
+
+/* Mobile devices (320px - 480px) */
+@media screen and (min-width: 320px) and (max-width: 480px) {
+    .hexagonal-rectangle{height: 26px;}
+    .hexagonal-rectangle p{font-size: 16px;}
+}
+
+/* iPads, Tablets (481px - 768px) */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .hexagonal-rectangle{height: 28px;}
+    .hexagonal-rectangle p{font-size: 18px;}
+}
+
+/* Small screens, laptops (769px - 1024px) */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .hexagonal-rectangle{height: 30px;}
+    .hexagonal-rectangle p{font-size: 20px;}
 }

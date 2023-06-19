@@ -2,3 +2,40 @@
     height: 100vh;
     width: 100vw;
 }
+
+
+#achievements-hexagonal-rectangle {
+    width: 200px;
+}
+#achievements-hr-left-line{
+    width: calc(90vw - 80vw);
+}
+#achievements-hr-right-line{
+    width: calc(90vw - 10vw - 200px);
+}
+
+
+/* Mobile devices (320px - 480px) */
+@media screen and (min-width: 320px) and (max-width: 480px) {
+    #achievements-hexagonal-rectangle {width: 140px;}
+    #achievements-hr-left-line{width: calc(45vw - 70px);}
+    #achievements-hr-right-line{width: calc(45vw - 70px);}
+}
+
+/* iPads, Tablets (481px - 768px) */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    #achievements-hexagonal-rectangle {width: 160px;}
+    #achievements-hr-left-line{width: calc(90vw - 80vw);}
+    #achievements-hr-right-line{width: calc(90vw - 10vw - 160px);}
+}
+
+/* Small screens, laptops (769px - 1024px) */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    #achievements-hexagonal-rectangle {width: 180px;}
+    #achievements-hr-left-line{width: calc(90vw - 80vw);}
+    #achievements-hr-right-line{width: calc(90vw - 10vw - 180px);}
+}
+
+/* All small screens (320px - 1024px) */
+@media screen and (min-width: 320px) and (max-width: 1024px) {
+}
