@@ -23,6 +23,12 @@ p{
 }
 
 
+.basic-flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /*buttons*/
 .button{
     background-color: #363636;
@@ -35,6 +41,14 @@ p{
     opacity: 1;
     transition: 0.3s opacity;
 }
+.icon{
+    height: 30px;
+    width: 30px;
+}
+.icon i{
+    color: whitesmoke;
+}
+
 
 
 /*project-heading*/

@@ -33,6 +33,8 @@ $(document).ready(()=> {
                 <div>
                     <div class="nav-ss-cross-button nav-link"> <i class="fa-solid fa-xmark"></i> </div>
                 </div>
+                
+                <div class="hr-line header-hr-line"></div>
                
                 <div>
                     <a href="#header"><div id="nav-home" class="nav-link button">  <p>HOME</p> </div></a>
@@ -42,16 +44,24 @@ $(document).ready(()=> {
                     <a href="#achievements"><div id="nav-achievements" class="nav-link button"> <p>ACHIEVEMENTS</p> </div></a>
                     <a href="#contact"><div id="nav-contact" class="nav-link button"> <p>CONTACT</p> </div></a>
                 </div>
+
+                <div class="hr-line header-hr-line"></div>
                 
-                <div>
+                <div id="nav-ss-section-social-links">
                     <a href="https://github.com/shubhamistic/" target="_blank">
-                        <div id="nav-ss-github" class="nav-link button icon"> <i class="fa-brands fa-github"></i> </div>
+                        <div id="nav-ss-github" class="nav-link button">
+                            <p> <i class="fa-brands fa-github"></i> &nbsp GITHUB &nbsp </p>
+                        </div>
                     </a>
                     <a href="https://www.linkedin.com/in/shubhamistic/" target="_blank">
-                        <div id="nav-ss-linkedin" class="nav-link button icon"> <i class="fa-brands fa-linkedin-in"></i> </div>
+                        <div id="nav-ss-linkedin" class="nav-link button">
+                            <p> <i class="fa-brands fa-linkedin-in"></i> LINKED IN </p>
+                        </div>
                     </a>
                     <a href="mailto:shubham2003garg@gmail.com">
-                        <div id="nav-ss-email" class="nav-link button icon"> <i class="fa-regular fa-envelope"></i> </div>
+                        <div id="nav-ss-email" class="nav-link button">
+                            <p> <i class="fa-regular fa-envelope"></i> EMAIL ME </p>
+                        </div>
                     </a>
                 </div>
             </div>
