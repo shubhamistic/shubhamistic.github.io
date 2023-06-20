@@ -26,13 +26,13 @@ p{
 /*buttons*/
 .button{
     background-color: #363636;
-    opacity: 0.5;
+    opacity: 0.75;
     border: solid 1px gray;
     box-shadow: inset -2px -2px 10px #424242;
     border-radius: 5px;
 }
 .button:hover {
-    opacity: 0.75;
+    opacity: 1;
     transition: 0.3s opacity;
 }
 
@@ -45,7 +45,7 @@ p{
 }
 .hexagonal-rectangle {
     height: 32px;
-    background-color: rgba(54, 54, 54, 0.5);
+    background-color: rgba(54, 54, 54, 0.75);
     position: relative;
     clip-path: polygon(10% 0, 90% 0, 100% 50%, 90% 100%, 10% 100%, 0 50%);
     display: flex;
@@ -55,11 +55,11 @@ p{
 .hexagonal-rectangle p{
     font-size: 22px;
     color: whitesmoke;
-    opacity: 0.5;
+    opacity: 0.75;
 }
 .hr-line{
     height: 1px;
-    border: solid 1px rgba(54, 54, 54, 0.5);
+    border: solid 1px rgba(54, 54, 54, 0.75);
 }
 
 /* Mobile devices (320px - 480px) */

@@ -19,7 +19,7 @@
 #home-heading p{
     font-size: 24px;
     color: whitesmoke;
-    opacity: 0.5;
+    opacity: 0.75;
 }
 
 #home-heading-main{
@@ -76,7 +76,7 @@
     }
     100% {
         visibility: visible;
-        opacity: 0.75;
+        opacity: 1;
     }
 }
 
@@ -85,7 +85,7 @@
 @media screen and (min-width: 320px) and (max-width: 480px) {
     #home-heading-main h2 {font-size: 2.75em;}
     #home-heading p{font-size: 12px;}
-    #home{height: calc(60vh - 60px);}
+    #home{height: calc(50vh - 60px);}
     #home-heading i{display: none;}
 }
 
@@ -107,7 +107,7 @@
 @media screen and (min-width: 320px) and (max-width: 1024px) {
     .visible-anim{
         animation: none;
-        opacity: 0.75;
+        opacity: 1;
         visibility: visible;
     }
 }
