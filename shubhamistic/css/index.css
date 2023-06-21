@@ -28,6 +28,10 @@ p{
     justify-content: center;
     align-items: center;
 }
+.text{
+    color: whitesmoke;
+    opacity: 0.75;
+}
 
 /*buttons*/
 .button{
@@ -48,7 +52,18 @@ p{
 .icon i{
     color: whitesmoke;
 }
-
+.tag{
+    height: 25px;
+    margin-right: 10px;
+    padding: 5px;
+    background-color: #363636;
+    opacity: 0.75;
+    border: solid 1px gray;
+    box-shadow: inset -2px -2px 10px #424242;
+    border-radius: 5px;
+    color: whitesmoke;
+    font-size: 12px;
+}
 
 
 /*project-heading*/
@@ -80,16 +95,19 @@ p{
 @media screen and (min-width: 320px) and (max-width: 480px) {
     .hexagonal-rectangle{height: 26px;}
     .hexagonal-rectangle p{font-size: 16px;}
+    .tag{margin-bottom: 10px;}
 }
 
 /* iPads, Tablets (481px - 768px) */
 @media screen and (min-width: 481px) and (max-width: 768px) {
     .hexagonal-rectangle{height: 28px;}
     .hexagonal-rectangle p{font-size: 18px;}
+    .tag{height: 20px; font-size: 9px;}
 }
 
 /* Small screens, laptops (769px - 1024px) */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
     .hexagonal-rectangle{height: 30px;}
     .hexagonal-rectangle p{font-size: 20px;}
+    .tag{font-size: 10px;}
 }
