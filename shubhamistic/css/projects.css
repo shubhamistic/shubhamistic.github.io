@@ -51,6 +51,7 @@
 }
 #p-sc-image, #p-sc-image img{
     width: 350px;
+    background-color: whitesmoke;
 }
 #p-sc-media{
     width: 40px;
@@ -113,6 +114,7 @@
 .p-image, .p-image img{
     width: 200px;
     border-radius: 10px;
+    background-color: whitesmoke;
 }
 .p-content{
     width: 200px;
