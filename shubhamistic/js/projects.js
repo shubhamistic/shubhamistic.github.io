@@ -1,178 +1,171 @@
 $(()=> {
-    const HTTPS = "https://api.shubhamistic.com/shubhamistic"
-    // const HTTP = "http://127.0.0.1:5000/shubhamistic"
-    const stellarCreations = $('#p-stellar-creations');
-    const techToolbox = $('#p-tech-toolbox');
-    const virtualAdventures = $('#p-virtual-adventures');
+    // const HTTPS = "https://api.shubhamistic.com/shubhamistic"
+    const HTTP = "http://127.0.0.1:5000/shubhamistic"
 
-    $.ajax({
-        url: `${HTTPS}/projects`,
-        type: "GET",
-        success: function (response) {
-            const data = response.data;
-            // Stellar Creations
-            // add stellar creations to the projects list
-            stellarCreations.html(`
-                <div id="p-sc-container">
-                    <img src="${data.stellar_creations.image}" alt="image">
-                    <div id="p-sc-content" class="basic-flex">
-                        <p id="p-c-title">${data.stellar_creations.title}</p>
-                        <div class="hr-line p-split p-split-top"></div>
-                        <div id="p-tags"></div>
-                        <div class="hr-line p-split"></div>
-                        <p id="p-c-about" class="text">${data.stellar_creations.description}</p>
+    function populateStellarCreations(data){
+        const stellarCreations = $('#p-stellar-creations');
+        // create the container
+        stellarCreations.html(`
+            <div id="p-sc-container">
+                <div id="p-sc-image">
+                    <img src="${data.image}" alt="image">
+                </div>
+                <div id="p-sc-media" class="basic-flex">
+                    <div class="basic-flex p-button button icon p-link p-qr">
+                        <i class="fa-solid fa-qrcode"></i>
                     </div>
-                    <div id="p-sc-media" class="basic-flex">
-                        <div id="p-web-links"></div>
+                    <a href="${data.url}" target="_blank">
+                        <div class="basic-flex p-button button icon p-link">
+                            <i class="fa-solid fa-up-right-from-square"></i>
+                        </div>
+                    </a>
+                </div>
+                <div id="p-sc-content" class="basic-flex">
+                    <p id="p-sc-title">${data.title}</p>
+                    <div id="p-sc-tags"></div>
+                    <div class="hr-line"></div>
+                    <p id="p-sc-about" class="text">${data.description}</p>
+                </div>
+            </div>
+        `);
+        // add the tags
+        for (let tag of data["tags"]) {
+            $('#p-sc-tags').append(`
+                <div class="basic-flex tag"><p> ${tag} </p></div>
+            `);
+        }
+    }
+
+    function populateTechToolbox(data){
+        const techToolbox = $('#p-tech-toolbox');
+        for(let containerID=0 ; containerID < data.length ; containerID++) {
+            techToolbox.append(`
+                <div class="p-container" id="p-tt-${containerID}">
+                    <div class="p-image">
+                        <img src="${data[containerID].image}" alt="image">
                     </div>
+                    <div class="basic-flex p-content">
+                        <p class="p-title">${data[containerID].title}</p>
+                        <div class="p-tags"></div>
+                        <div class="hr-line"></div>
+                        <p class="text p-about">${data[containerID].description}</p>
+                    </div>
+                    <div class="basic-flex p-media"></div>
                 </div>
             `);
-            // add tech stack tags
-            for (let tag of data.stellar_creations.tags) {
-                $('#p-tags').append(`
-                    <div class="basic-flex tag"><p> ${tag} </p></div>
+            // add the tags
+            for (let tag of data[containerID]["tags"]) {
+                $(`#p-tt-${containerID} .p-tags`).append(`
+                    <div class="basic-flex tag p-tag"><p> ${tag} </p></div>
                 `);
             }
-            // add web links to the project
-            let web_links = data.stellar_creations.web_links;
-            if(web_links.github){
-                $('#p-web-links').append(`
-                    <a href="${web_links.github}" target="_blank">
+            // add the web links
+            let web_links = data[containerID]["web_links"];
+            let webLinks = $(`#p-tt-${containerID} .p-media`);
+            if (web_links["github"]) {
+                webLinks.append(`
+                    <a href="${web_links["github"]}" target="_blank">
                         <div class="basic-flex p-button button icon p-link">
                             <i class="fa-brands fa-github"></i>
                         </div>
                     </a>
                 `);
             }
-            if(web_links.website){
-                $('#p-web-links').append(`
-                    <a href="${web_links.website}" target="_blank">
+            if (web_links["website"]) {
+                webLinks.append(`
+                    <a href="${web_links["website"]}" target="_blank">
                         <div class="basic-flex p-button button icon p-link">
                             <i class="fa-solid fa-up-right-from-square"></i>
                         </div>
                     </a>
                 `);
-
-                $('#p-sc-media').append(`
+                webLinks.prepend(`
                     <div class="basic-flex p-button button icon p-link p-qr">
                         <i class="fa-solid fa-qrcode"></i>
                     </div>
                 `);
             }
+        }
+    }
 
+    function populateVirtualAdventures(data){
+        const virtualAdventures = $('#p-virtual-adventures');
+        for(let containerID=0 ; containerID < data.length ; containerID++) {
+            virtualAdventures.append(`
+                <div class="p-container" id="p-va-${containerID}">
+                    <div class="p-image">
+                        <img src="${data[containerID].image}" alt="image">
+                    </div>
+                    <div class="basic-flex p-content">
+                        <p class="p-title">${data[containerID].title}</p>
+                        <div class="p-tags"></div>
+                        <div class="hr-line"></div>
+                        <p class="text p-about">${data[containerID].description}</p>
+                    </div>
+                    <div class="basic-flex p-media"></div>
+                </div>
+            `);
+            // add the tags
+            for (let tag of data[containerID]["tags"]) {
+                $(`#p-va-${containerID} .p-tags`).append(`
+                    <div class="basic-flex tag p-tag"><p> ${tag} </p></div>
+                `);
+            }
+            // add the web links
+            let web_links = data[containerID]["web_links"];
+            let webLinks = $(`#p-va-${containerID} .p-media`);
+            if (web_links["github"]) {
+                webLinks.append(`
+                    <a href="${web_links["github"]}" target="_blank">
+                        <div class="basic-flex p-button button icon p-link">
+                            <i class="fa-brands fa-github"></i>
+                        </div>
+                    </a>
+                `);
+            }
+            if (web_links["website"]) {
+                webLinks.append(`
+                    <a href="${web_links["website"]}" target="_blank">
+                        <div class="basic-flex p-button button icon p-link">
+                            <i class="fa-solid fa-up-right-from-square"></i>
+                        </div>
+                    </a>
+                `);
+                webLinks.prepend(`
+                    <div class="basic-flex p-button button icon p-link p-qr">
+                        <i class="fa-solid fa-qrcode"></i>
+                    </div>
+                `);
+            }
+        }
+    }
+
+    $.ajax({
+        url: `${HTTP}/projects`,
+        type: "GET",
+        success: function (response) {
+            const data = response.data;
+            // Stellar Creations
+            populateStellarCreations(data["stellar_creations"]);
             // Tech Toolbox
-            for(let container=0 ; container < data.tech_toolbox.length ; container++) {
-                techToolbox.append(`
-                    <div class="p-container" id="p-tt-${container}">
-                        <img src="${data.tech_toolbox[container].image}" alt="image">
-                        <div class="basic-flex p-content">
-                            <p class="p-c-title">${data.tech_toolbox[container].title}</p>
-                            <div class="p-tags"></div>
-                            <div class="hr-line p-sc-split"></div>
-                            <p class="text p-c-about">${data.tech_toolbox[container].description}</p>
-                        </div>
-                        <div class="basic-flex p-media">
-                            <div class="p-web-links"></div>
-                        </div>
-                    </div>
-                `);
-                // add tech stack tags
-                for (let tag of data.tech_toolbox[container].tags) {
-                    $(`#p-tt-${container} .p-tags`).append(`
-                        <div class="basic-flex tag p-sc-tag"><p> ${tag} </p></div>
-                    `);
-                }
-                // add web links to the project
-                web_links = data.tech_toolbox[container].web_links;
-                if (web_links.github) {
-                    $(`#p-tt-${container} .p-web-links`).append(`
-                        <a href="${web_links.github}" target="_blank">
-                            <div class="basic-flex p-button button icon p-link">
-                                <i class="fa-brands fa-github"></i>
-                            </div>
-                        </a>
-                    `);
-                }
-                if (web_links.website) {
-                    $(`#p-tt-${container} .p-web-links`).append(`
-                        <a href="${web_links.website}" target="_blank">
-                            <div class="basic-flex p-button button icon p-link">
-                                <i class="fa-solid fa-up-right-from-square"></i>
-                            </div>
-                        </a>
-                    `);
-
-                    $(`#p-tt-${container} .p-media`).append(`
-                        <div class="basic-flex p-button button icon p-link p-qr">
-                            <i class="fa-solid fa-qrcode"></i>
-                        </div>
-                    `);
-                }
-            }
-
+            populateTechToolbox(data["tech_toolbox"]);
             // Virtual-Adventures
-            for(let container=0 ; container < data.virtual_adventures.length ; container++) {
-                virtualAdventures.append(`
-                    <div class="p-container" id="p-va-${container}">
-                        <img src="${data.virtual_adventures[container].image}" alt="image">
-                        <div class="basic-flex p-content">
-                            <p class="p-c-title">${data.virtual_adventures[container].title}</p>
-                            <div class="p-tags"></div>
-                            <div class="hr-line p-sc-split"></div>
-                            <p class="text p-c-about">${data.virtual_adventures[container].description}</p>
-                        </div>
-                        <div class="basic-flex p-media">
-                            <div class="p-web-links"></div>
-                        </div>
-                    </div>
-                `);
-                // add tech stack tags
-                for (let tag of data.virtual_adventures[container].tags) {
-                    $(`#p-va-${container} .p-tags`).append(`
-                        <div class="basic-flex tag p-sc-tag"><p> ${tag} </p></div>
-                    `);
-                }
-                // add web links to the project
-                web_links = data.virtual_adventures[container].web_links;
-                if (web_links.github) {
-                    $(`#p-va-${container} .p-web-links`).append(`
-                        <a href="${web_links.github}" target="_blank">
-                            <div class="basic-flex p-button button icon p-link">
-                                <i class="fa-brands fa-github"></i>
-                            </div>
-                        </a>
-                    `);
-                }
-                if (web_links.website) {
-                    $(`#p-va-${container} .p-web-links`).append(`
-                        <a href="${web_links.website}" target="_blank">
-                            <div class="basic-flex p-button button icon p-link">
-                                <i class="fa-solid fa-up-right-from-square"></i>
-                            </div>
-                        </a>
-                    `);
-
-                    $(`#p-va-${container} .p-media`).append(`
-                        <div class="basic-flex p-button button icon p-link p-qr">
-                            <i class="fa-solid fa-qrcode"></i>
-                        </div>
-                    `);
-                }
-            }
+            populateVirtualAdventures(data["virtual_adventures"]);
         },
         error: function () {}
     });
 
     // logic for making the project list scrollable in x-axis
     const projectList = $('.p-list');
-    projectList.on('wheel swipeleft swiperight', function(event) {
+    projectList.on('wheel', function(event) {
         let deltaX = event.originalEvent.deltaX || 0;
         let deltaY = event.originalEvent.deltaY || 0;
 
         if (Math.abs(deltaX) > Math.abs(deltaY)) {
             // Scroll the div horizontally
             $(this).scrollLeft($(this).scrollLeft() - deltaX);
-            event.preventDefault(); // Prevent default scrolling behavior
+            // Prevent default scrolling behavior
+            event.preventDefault();
         }
     });
 });

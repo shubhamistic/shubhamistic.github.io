@@ -97,7 +97,6 @@ a{
 @media screen and (min-width: 320px) and (max-width: 480px) {
     .hexagonal-rectangle{height: 26px;}
     .hexagonal-rectangle p{font-size: 16px;}
-    .tag{margin-bottom: 10px;}
 }
 
 /* iPads, Tablets (481px - 768px) */
