@@ -7,7 +7,9 @@ $(()=> {
         // create the container
         stellarCreations.html(`
             <div id="p-sc-container">
-                <div id="p-sc-image"></div>
+                <div id="p-sc-image">
+                    <img src="${data.image}" alt="image">
+                </div>
                 <div id="p-sc-media" class="basic-flex">
                     <div class="basic-flex p-button button icon p-link p-qr">
                         <i class="fa-solid fa-qrcode"></i>
@@ -45,8 +47,8 @@ $(()=> {
                         <div class="p-tags"></div>
                         <div class="hr-line"></div>
                         <p class="text p-about">${data[containerID].description}</p>
+                        <div class="basic-flex p-media"></div>
                     </div>
-                    <div class="basic-flex p-media"></div>
                 </div>
             `);
             // add the tags
@@ -58,15 +60,6 @@ $(()=> {
             // add the web links
             let web_links = data[containerID]["web_links"];
             let webLinks = $(`#p-tt-${containerID} .p-media`);
-            if (web_links["github"]) {
-                webLinks.append(`
-                    <a href="${web_links["github"]}" target="_blank">
-                        <div class="basic-flex p-button button icon p-link">
-                            <i class="fa-brands fa-github"></i>
-                        </div>
-                    </a>
-                `);
-            }
             if (web_links["website"]) {
                 webLinks.append(`
                     <a href="${web_links["website"]}" target="_blank">
@@ -75,10 +68,14 @@ $(()=> {
                         </div>
                     </a>
                 `);
-                webLinks.prepend(`
-                    <div class="basic-flex p-button button icon p-link p-qr">
-                        <i class="fa-solid fa-qrcode"></i>
-                    </div>
+            }
+            if (web_links["github"]) {
+                webLinks.append(`
+                    <a href="${web_links["github"]}" target="_blank">
+                        <div class="basic-flex p-button button icon p-link">
+                            <i class="fa-brands fa-github"></i>
+                        </div>
+                    </a>
                 `);
             }
         }
@@ -95,8 +92,8 @@ $(()=> {
                         <div class="p-tags"></div>
                         <div class="hr-line"></div>
                         <p class="text p-about">${data[containerID].description}</p>
+                        <div class="basic-flex p-media"></div>
                     </div>
-                    <div class="basic-flex p-media"></div>
                 </div>
             `);
             // add the tags
@@ -108,15 +105,6 @@ $(()=> {
             // add the web links
             let web_links = data[containerID]["web_links"];
             let webLinks = $(`#p-va-${containerID} .p-media`);
-            if (web_links["github"]) {
-                webLinks.append(`
-                    <a href="${web_links["github"]}" target="_blank">
-                        <div class="basic-flex p-button button icon p-link">
-                            <i class="fa-brands fa-github"></i>
-                        </div>
-                    </a>
-                `);
-            }
             if (web_links["website"]) {
                 webLinks.append(`
                     <a href="${web_links["website"]}" target="_blank">
@@ -125,10 +113,14 @@ $(()=> {
                         </div>
                     </a>
                 `);
-                webLinks.prepend(`
-                    <div class="basic-flex p-button button icon p-link p-qr">
-                        <i class="fa-solid fa-qrcode"></i>
-                    </div>
+            }
+            if (web_links["github"]) {
+                webLinks.append(`
+                    <a href="${web_links["github"]}" target="_blank">
+                        <div class="basic-flex p-button button icon p-link">
+                            <i class="fa-brands fa-github"></i>
+                        </div>
+                    </a>
                 `);
             }
         }
