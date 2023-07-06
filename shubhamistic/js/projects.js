@@ -41,7 +41,9 @@ $(()=> {
         for(let containerID=0 ; containerID < data.length ; containerID++) {
             techToolbox.append(`
                 <div class="p-container" id="p-tt-${containerID}">
-                    <div class="p-image"></div>
+                    <div class="p-image">
+                        <img src="${data[containerID].image}" alt="image">
+                    </div>
                     <div class="basic-flex p-content">
                         <p class="p-title">${data[containerID].title}</p>
                         <div class="p-tags"></div>
@@ -86,7 +88,9 @@ $(()=> {
         for(let containerID=0 ; containerID < data.length ; containerID++) {
             virtualAdventures.append(`
                 <div class="p-container" id="p-va-${containerID}">
-                    <div class="p-image"></div>
+                    <div class="p-image">
+                        <img src="${data[containerID].image}" alt="image">
+                    </div>
                     <div class="basic-flex p-content">
                         <p class="p-title">${data[containerID].title}</p>
                         <div class="p-tags"></div>

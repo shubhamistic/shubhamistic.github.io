@@ -82,17 +82,17 @@
 
 /* Mobile devices (320px - 480px) */
 @media screen and (min-width: 320px) and (max-width: 480px) {
+    #home {height: 300px;}
     #home-heading-main h2 {font-size: 2.75em;}
     #home-heading p{font-size: 12px;}
-    #home{height: calc(50vh - 60px);}
     #home-heading i{display: none;}
 }
 
 /* iPads, Tablets (481px - 768px) */
 @media screen and (min-width: 481px) and (max-width: 768px) {
+    #home {height: 350px;}
     #home-heading-main h2 {font-size: 3.75em;}
     #home-heading p{font-size: 16px;}
-    #home{height: calc(60vh - 60px);}
     #home-heading i{display: none;}
 }
 
@@ -102,7 +102,7 @@
     #home-heading p{font-size: 20px;}
 }
 
-/* All small screens (320px - 1024px) */
+/* All devices between (320px - 1024px) */
 @media screen and (min-width: 320px) and (max-width: 1024px) {
     .visible-anim{
         animation: none;

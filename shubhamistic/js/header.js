@@ -4,17 +4,20 @@ $(document).ready(()=> {
 
     socialButton.click(function (){
         socialButton.html(`
-            <div id="nav-ss-social-links">
+            <div class="nav-ss-links" id="nav-ss-social-links">
                 <div class="nav-ss-cross-button nav-link"> <i class="fa-solid fa-xmark"></i> </div>
-                <a href="https://github.com/shubhamistic/" target="_blank">
-                    <div id="nav-ss-github" class="nav-link button icon"> <i class="fa-brands fa-github"></i> </div>
-                </a>
-                <a href="https://www.linkedin.com/in/shubhamistic/" target="_blank">
-                    <div id="nav-ss-linkedin" class="nav-link button icon"> <i class="fa-brands fa-linkedin-in"></i> </div>
-                </a>
-                <a href="mailto:shubham2003garg@gmail.com">
-                    <div id="nav-ss-email" class="nav-link button icon"> <i class="fa-regular fa-envelope"></i> </div>
-                </a>
+                
+                <div class="basic-flex" id="nav-ss-social-links-container">
+                    <a href="https://github.com/shubhamistic/" target="_blank">
+                        <div id="nav-ss-github" class="nav-link button icon"> <i class="fa-brands fa-github"></i> </div>
+                    </a>
+                    <a href="https://www.linkedin.com/in/shubhamistic/" target="_blank">
+                        <div id="nav-ss-linkedin" class="nav-link button icon"> <i class="fa-brands fa-linkedin-in"></i> </div>
+                    </a>
+                    <a href="mailto:shubham2003garg@gmail.com">
+                        <div id="nav-ss-email" class="nav-link button icon"> <i class="fa-regular fa-envelope"></i> </div>
+                    </a>
+                </div>
             </div>
         `);
 
@@ -29,7 +32,7 @@ $(document).ready(()=> {
 
     sectionButton.click(function (){
         sectionButton.html(`
-            <div id="nav-ss-section-links">
+            <div class="nav-ss-links" id="nav-ss-section-links">
                 <div>
                     <div class="nav-ss-cross-button nav-link"> <i class="fa-solid fa-xmark"></i> </div>
                 </div>
