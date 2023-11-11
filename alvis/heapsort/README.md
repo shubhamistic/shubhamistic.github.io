@@ -1,7 +1,7 @@
 <a name="readme-top"></a>
 
 <div align="center">
-  <h3 align="center">Alvis, Heap-Sort</h3>
+  <h3 align="center">Alvis, HeapSort</h3>
 
   <p align="center">
     Visualize popular DSA sorting algorithm Heap-Sort

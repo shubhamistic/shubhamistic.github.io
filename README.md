@@ -19,6 +19,8 @@
 ### Alvis
 - **N-Queens [[Website]](https://shubhamistic.com/alvis/n-queens) [[Repository]](/alvis/n-queens):**
   Visualize popular N-Queens DSA problem.
+- **HeapSort [[Website]](https://heapsortvisualizer.web.app/) [[Repository]](https://github.com/shubhamistic/heap-sort-visualizer):**
+    Visualize HeapSort Sorting Algorithm.
 
 ### Games
 - **Ping-Pong [[Website]](https://shubhamistic.com/games/ping-pong) [[Repository]](/games/ping-pong):**
