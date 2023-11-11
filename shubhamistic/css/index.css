@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
+
 *{
     box-sizing: border-box;
     overscroll-behavior-y: none;
@@ -24,7 +26,6 @@ p{
 a{
     text-decoration: none;
 }
-
 
 .basic-flex{
     display: flex;
@@ -73,6 +74,7 @@ a{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0 5vw;
 }
 .hexagonal-rectangle {
     height: 32px;
