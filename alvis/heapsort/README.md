@@ -20,7 +20,7 @@
 
 
 ## Visit
-#### [shubhamistic.com/alvis/heapsort](https://heapsortvisualizer.web.app/)
+#### [heapsortvisualizer.web.app](https://heapsortvisualizer.web.app/)
 
 ## Repository
 #### [shubhamistic/heap-sort-visualizer](https://github.com/shubhamistic/heap-sort-visualizer)

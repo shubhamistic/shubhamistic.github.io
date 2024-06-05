@@ -22,7 +22,7 @@
 
 ## Visit
 
-### [shubhamistic.com/alvis/n-queens](https://shubhamistic.com/alvis/n-queens/)
+### [shubhamistic.github.io/alvis/n-queens](https://shubhamistic.github.io/alvis/n-queens/)
 
 
 ## Demo

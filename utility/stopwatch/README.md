@@ -20,7 +20,7 @@
 
 ## Visit
 
-[shubhamistic.com/utility/stopwatch](https://shubhamistic.com/utility/stopwatch)
+[shubhamistic.github.io/utility/stopwatch](https://shubhamistic.github.io/utility/stopwatch)
 
 
 ## Demo

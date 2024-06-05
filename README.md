@@ -17,19 +17,19 @@
 ## Projects
 
 ### Alvis
-- **N-Queens [[Website]](https://shubhamistic.com/alvis/n-queens) [[Repository]](/alvis/n-queens):**
+- **N-Queens [[Website]](https://shubhamistic.github.io/alvis/n-queens) [[Repository]](/alvis/n-queens):**
   Visualize popular N-Queens DSA problem.
 - **HeapSort [[Website]](https://heapsortvisualizer.web.app/) [[Repository]](https://github.com/shubhamistic/heap-sort-visualizer):**
     Visualize HeapSort Sorting Algorithm.
 
 ### Games
-- **Ping-Pong [[Website]](https://shubhamistic.com/games/ping-pong) [[Repository]](/games/ping-pong):**
+- **Ping-Pong [[Website]](https://shubhamistic.github.io/games/ping-pong) [[Repository]](/games/ping-pong):**
     A classic game of table tennis brought to your browser.
-- **Tic-Tac-Toe [[Website]](https://shubhamistic.com/games/tictactoe) [[Repository]](/games/tictactoe):**
+- **Tic-Tac-Toe [[Website]](https://shubhamistic.github.io/games/tictactoe) [[Repository]](/games/tictactoe):**
     Play TicTacToe with your friends online.
 
 ### Utility
-- **Stopwatch [[Website]](https://shubhamistic.com/utility/stopwatch) [[Repository]](/utility/stopwatch):**
+- **Stopwatch [[Website]](https://shubhamistic.github.io/utility/stopwatch) [[Repository]](/utility/stopwatch):**
     A stopwatch inspired by iPhone's stopwatch app.
 
 

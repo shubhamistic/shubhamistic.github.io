@@ -16,7 +16,7 @@
 
 
 ## Visit
-[shubhamistic.com/games/tictactoe](https://shubhamistic.com/games/tictactoe)
+[shubhamistic.github.io/games/tictactoe](https://shubhamistic.github.io/games/tictactoe)
 
 
 ## Demo
